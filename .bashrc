@@ -4,6 +4,9 @@
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# ignore common commands when search/ filter history
+export HISTIGNORE="ls:cd:pwd"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;

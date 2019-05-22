@@ -13,7 +13,7 @@
 "   - Haskell Features
 "=========================================================================
 
-
+execute pathogen#infect()
 
 "-------------------------------------------------------------------------
 " Todo's
@@ -35,6 +35,8 @@ filetype plugin on
 filetype plugin indent on
 set number                  " Turn on line numbers
 set background=dark         " Use dark background, determined light or dark mode of some color schemes
+set laststatus=2
+"set statusline
 
 " Custom colorschemes (need to have <name>.vim file in .vim/colors/) , uncomment one
 colorscheme gruvbox
@@ -80,14 +82,14 @@ set autowrite
 
 " TODO need to add hlint to the syntax checker https://github.com/vim-syntastic/syntastic also just fix in general
 " Syntax/ active type checking
-set statusline+=%#warningmsg#
+"set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 1
 "-------------------------------------------------------------------------
 
 
