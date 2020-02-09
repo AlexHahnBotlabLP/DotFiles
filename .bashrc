@@ -4,6 +4,14 @@
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  GIT_PROMPT_ONLY_IN_REPO=1
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
+alias b="cd -"
+
 # ignore common commands when search/ filter history
 export HISTIGNORE="ls:cd:pwd"
 
@@ -13,7 +21,7 @@ case $- in
       *) return;;
 esac
 
-set -o vi
+#set -o vi
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
