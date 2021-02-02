@@ -17,8 +17,10 @@
 		  (interactive)
 		  (other-window -1)))
 
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+
 (global-set-key (kbd "C-c C-m C-c") 'mc/edit-lines)
 
 ;; Binds 'git status' to C-c m
@@ -29,6 +31,8 @@
    (magit-key-mode-toggle-option
     (quote committing)
     "--no-verify")))
+;; the more common magit git status shortcut mapping
+(define-key global-map (kbd "C-c m") 'magit-status)
 
 (define-key global-map (kbd "C-x ]")
   '(lambda () (interactive) (buf-move-right)))
@@ -42,24 +46,10 @@
 (define-key global-map (kbd "C-x }")
   '(lambda () (interactive) (buf-move-down)))
 
-(add-hook 'before-save-hook 'whitespace-cleanup)
-(add-hook 'after-init-hook 'global-company-mode)
-;; (add-hook 'haskell-mode-hook 'turn-off-electric-indent)
-;; (add-hook 'ess-mode-hook 'turn-off-electric-indent)
-
 
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(haskell-process-path-cabal "nix-shell --run repl")
- '(haskell-process-type (quote cabal-repl))
- '(package-selected-packages
-   (quote
-    (yaml-mode company multiple-cursors command-log-mode interaction-log helm buffer-move magit jsonl json-mode haskell-mode gruvbox-theme ess direx dired-subtree))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -69,4 +59,22 @@
 
 (require 'haskell-interactive-mode)
 (require 'haskell-process)
-(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+;; (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+(add-hook 'haskell-mode-hook
+	  (lambda ()
+	    (interactive)
+	    (interactive-haskell-mode)
+	    (define-key interactive-haskell-mode-map (kbd "C-c C-l") nil)
+	    (define-key haskell-mode-map (kbd "C-c C-l") nil)))
+
+
+	    
+;; (add-hook ’ess-mode-hook (lambda () (local-unset-key “\#”)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (paredit yaml-mode multiple-cursors magit jsonl json-mode interaction-log helm haskell-mode gruvbox-theme f ess direx dired-subtree company command-log-mode buffer-move))))
