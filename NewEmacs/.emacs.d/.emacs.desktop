@@ -1,0 +1,19 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Thu Feb 25 00:06:08 2021
+;; Desktop file format version 208
+;; Emacs version 26.3
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (24631 12352 774442 481000) (desktop . "208") "alexhahn@AlexHahn-Desktop" nil nil ((((minibuffer . t) (tool-bar-lines . 0) (menu-bar-lines . 0) (vertical-scroll-bars) (foreground-color . "unspecified-fg") (background-color . "unspecified-bg") (display-type . mono) (background-mode . dark) (cursor-color . "white") (font . "tty") (height . 11) (width . 10) (modeline . t) (unsplittable) (frameset--id . "021F-B214-BDE8-8175") (frameset--mini t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 3) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 10) (pixel-height . 10) (total-width . 10) (total-height . 10) (normal-height . 1.0) (normal-width . 1.0) (buffer "*helm-mode-desktop-save*" (selected . t) (hscroll . 0) (fringes 0 0 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1) (start . 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/Botlab/CodeBase/bllp-platform/src/BotLab/Data/Options/CboeRaw/Types.hs" "~/Botlab/CodeBase/bllp-platform/src/BotLab/Data/Options/Types.hs" "~/Botlab/CodeBase/bllp-platform/src/BotLab/Data/Options/CboeRaw/CboeOptionTrade.hs" "~/Botlab/CodeBase/bllp-platform/src/BotLab/Data/Options/CboeRaw/CboeOptionOpenInterest.hs" "~/Botlab/CodeBase/bllp-platform/src/BotLab/Data/Options/CboeRaw/CboeOption.hs" "~/Botlab/CodeBase/bllp-platform/src/BotLab/Data/Options/CboeOptionQuote.hs" "~/Botlab/CodeBase/bllp-platform/src/BotLab/Data/IO/Options.hs" "~/Botlab/CodeBase/bllp-platform/src/BotLab/Data/Options/#CboeOption.hs#" "~/Botlab/CodeBase/bllp-platform/src/BotLab/Data/Options/CboeOption.hs"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
