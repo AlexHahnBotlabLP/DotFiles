@@ -98,6 +98,13 @@ tmux new -d -s 'Iris'
 
 tmux send-keys 'JAVA_EXE=/home/alexhahn/Downloads/jdk1.8.0_211/bin/java ~/DeephavenLauncher/DeephavenLauncher.sh' Enter
 
+#----------------------------------------------------
+# Emacs daemon (may want to put all backround processes in one session to avoid clutter)
+#----------------------------------------------------
+tmux new -d -s 'Emacs'
+tmux send-keys 'emacs --daemon' Enter
+#tmux send-keys 'emacsclient -t' Enter #Can't run this inside of tmux or it opens emacs inside of it (despite the -t) ToDo: look into how to open a new terminal/emacs window
+
 tmux attach-session -t Trading
 
 
