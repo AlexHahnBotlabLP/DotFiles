@@ -61,7 +61,7 @@ tmux send-keys 'nix-shell --run pm-runner ghcjs.nix' Enter
 # tmux send-keys 'ssh -L 4001:localhost:4001 ubuntu@tun.botlablp.com -NT' Enter # trading
 
 #----------------------------------------------------
-# open Trading and PM  Websites
+# open Trading and PM  Websites (maybe add all startup websites?)
 #----------------------------------------------------
 tmux new -d -s 'OpenWebsites'
 tmux send-keys 'google-chrome http://localhost:4001 http://localhost:4000' Enter
