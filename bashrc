@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/.git" --work-tree="$HOME/.dotfiles"'
 
 #if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
 #  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
