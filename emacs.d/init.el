@@ -8,10 +8,10 @@
 
 ;; Package repositories
 (setq package-archives '(
- 			   ("org" . "https://orgmode.org/elpa/")
-			   ("gnu" . "https://elpa.gnu.org/packages/")
-			   ("melpa" . "https://melpa.org/packages/")
-			)
+    ("org" . "https://orgmode.org/elpa/")
+  ("gnu" . "https://elpa.gnu.org/packages/")
+  ("melpa" . "https://melpa.org/packages/")
+)
 )
 
 
@@ -77,8 +77,8 @@
                                               (format-time-string "%s" (file-attribute-access-time (cdr dirl))))))))
     (setq proj-list (sort proj-list (lambda (a b) (string> (cdr a) (cdr b)))))
     (when (dashboard-insert-project-list
-	   "Recent Projects:"
-	   (dashboard-subseq proj-list 0 list-size))
+  "Recent Projects:"
+  (dashboard-subseq proj-list 0 list-size))
       (dashboard-insert-shortcut "p" "Recent Projects:"))))
 (dashboard-insert-shortcut "f" "Recent Files")
 (dashboard-insert-shortcut "b" "Bookmarks")
@@ -91,7 +91,7 @@
 ;(add-to-list 'dashboard-item-generators  '(projects . dashboard-insert-projects))
 ;(add-to-list 'dashboard-items '(projects . 5) t)
 (setq dashboard-items '((recents  . 5)
-			(projects . 5)
+(projects . 5)
                         (bookmarks . 5)))
 
 ;(setq
@@ -127,7 +127,7 @@
 ;; Fancy modeline ;doom is pretty good but I like the below a bit better
 ;(require 'doom-modeline)
 ;(doom-modeline-mode 1)
-					;(setq doom-modeline-project-detection 'project)
+;(setq doom-modeline-project-detection 'project)
 ;(setq doom-modeline-vcs-max-length 40) ; who hasn't run into longer branch names...
 
 
@@ -173,7 +173,7 @@
                                       )))))
 
 ;               (propertize org-mode-line-string 'face '(:foreground "#5DD8FF")) ; this is broken on undefined org-mode-line-string
-;	       (propertize 'face '(:foreground "#5DD8FF"))
+;       (propertize 'face '(:foreground "#5DD8FF"))
 
                ;; the current major mode
                (propertize " %m " 'face 'font-lock-string-face)
@@ -224,10 +224,10 @@
 
 ;; set C-x p to previous buffer
 (global-set-key (kbd "C-x p") (lambda ()
-				(interactive)
-				(other-window -1)
-				))
-			      
+(interactive)
+(other-window -1)
+))
+     
 
 (define-key global-map (kbd "C-x ]")
   '(lambda () (interactive) (buf-move-right)))
@@ -300,10 +300,10 @@
         ("C-h a"   . helm-apropos)
         ("M-y"     . helm-show-kill-ring)
         :map helm-map
-	("<tab>" . helm-execute-persistent-action) ; this doesn't work right in any 'termina' window ie the  emacsclient -t windows... ?
+("<tab>" . helm-execute-persistent-action) ; this doesn't work right in any 'termina' window ie the  emacsclient -t windows... ?
         ("C-i" . 'helm-execute-persistent-action) ; this makes tab autocomplete work as expected in the terminal windows
-	("C-z" . helm-select-action)
-	))
+("C-z" . helm-select-action)
+))
 
 ;; Better searching (C-s now uses a minibuffer to show lines/ possible matches to jump to)
 (use-package counsel
@@ -324,7 +324,7 @@
 ;;   :ensure t
 ;;   :diminish ivy-mode
   :bind (("C-s" . swiper)
-	 ("C-c C-r" . ivy-resume))
+("C-c C-r" . ivy-resume))
   :init
   (ivy-mode 1)
   (counsel-mode 1)
@@ -342,11 +342,11 @@
 ;;(require 'haskell-process)
 ;; (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook
-	  (lambda ()
-	    (interactive)
-	    (interactive-haskell-mode)
-	    (define-key interactive-haskell-mode-map (kbd "C-c C-l") nil) ; I have a bad habit of doing this for R files and this really messes things up in haskell so set it to no op nil
-	    (define-key haskell-mode-map (kbd "C-c C-l") nil)))
+ (lambda ()
+   (interactive)
+   (interactive-haskell-mode)
+   (define-key interactive-haskell-mode-map (kbd "C-c C-l") nil) ; I have a bad habit of doing this for R files and this really messes things up in haskell so set it to no op nil
+   (define-key haskell-mode-map (kbd "C-c C-l") nil)))
 
 
 ;; Emacs Speaks Statistics (ESS)
@@ -368,17 +368,17 @@
 
 ;;automatically get the correct mode
 auto-mode-alist (append (list '("\\.c$" . c-mode)                 ; c files
-			      '("\\.tex$" . latex-mode)           ; latex files
-			      '("\\.S$" . S-mode)                 ; source code files
-			      '("\\.s$" . S-mode)                 ; source code files
-			      '("\\.R$" . R-mode)                 ; R files
-			      '("\\.r$" . R-mode)                 ; R files
-			      '("\\.html$" . html-mode)           ; html files 
+     '("\\.tex$" . latex-mode)           ; latex files
+     '("\\.S$" . S-mode)                 ; source code files
+     '("\\.s$" . S-mode)                 ; source code files
+     '("\\.R$" . R-mode)                 ; R files
+     '("\\.r$" . R-mode)                 ; R files
+     '("\\.html$" . html-mode)           ; html files
                               '("\\.emacs" . emacs-lisp-mode)     ; emacs lisp files
-			      '("\\.csv\\" . csv-mode)            ; csv files
-			      '("\\.json\\" . json-mode)          ; json files
-	                )
-		      auto-mode-alist)
+     '("\\.csv\\" . csv-mode)            ; csv files
+     '("\\.json\\" . json-mode)          ; json files
+               )
+     auto-mode-alist)
 
 
 (custom-set-variables
@@ -395,3 +395,4 @@ auto-mode-alist (append (list '("\\.c$" . c-mode)                 ; c files
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
