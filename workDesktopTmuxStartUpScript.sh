@@ -78,6 +78,7 @@ tmux send-keys 'cd PROD_TRADING' Enter
 
 tmux split-window -v
 
+#TODO: check mount status and mount if needed (or just umount and remount each time?)
 # BOTTOM PANE
 # maybe check mnt status and mount/ unmount first?
 tmux send-keys 'cd /mnt/prod_oms/'"$today" Enter
